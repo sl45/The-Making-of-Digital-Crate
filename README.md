@@ -37,3 +37,9 @@ _____
 Mediainfo用來存取視聽檔案的相關技術元資料（Technical Metadata），並可用以下的指令將技術元資料轉存為國際通用可延伸標記式語言XML。
     
     mediainfo (inputfile) --output=XML --logfile=(outputfile.log)
+
+## 相關資源 ##
+- [Archiving and distribution of CD-ROM artworks, a study of the Emulation as a Service (EaaS) tool and other proposals](http://li-ma.nl/site/sites/default/files/201611_DE_Houdbaar_Final_report_CD-ROM_Archiving_DEF.pdf), The Hague, 1 November 2016. <br>
+- [FFmpeg Cookbook for Archivists](https://avpres.net/FFmpeg/)<br>
+- [File Signature Table](https://www.garykessler.net/library/file_sigs.html)
+- [Sustainability of Digital Formats: Planning for Library of Congress Collections](https://www.loc.gov/preservation/digital/formats/fdd/descriptions.shtml)
