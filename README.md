@@ -19,7 +19,7 @@ _____
 以下建議的工作流程，主要用以將數位物件安全無誤的移動到工作站內，並進行打包工作：
 <br>藝術家提供的外接讀寫媒介 -> 外接防讀寫硬碟 -> BitCurator -> rsync -> mediainfo -> md5deep -> bagit-python <br>
 
-## rsync ##
+## rsync 
 [rsync](https://wiki.archlinux.org/index.php/rsync) 是Unix下的自由軟體，比較比起拖拉式的拷貝，它可以有效的利用演算法校驗傳輸內容，以下的指令可以使用檔案模式以確保檔案元資料不被變動，顯示並詳細列表傳輸內容。
 
     rsync -a --progress (inputfile) (destination folder)
@@ -31,12 +31,25 @@ _____
     rsync -rcnv (/folder1) (/folder2)
 
 *``-r`` will recurse into the directories. ``-c`` compares file checksum. ``-n`` will do a "dry run" and make no changes. ``-v`` prints the output verbosely.*
-## MediaInfo ##
+
+## MediaInfo 
 [MediaInfo](https://mediaarea.net/en/MediaInfo) 是一個開放原始碼的自由軟體 ，它可以用來顯示媒體檔案相關的技術資訊，以及許多視聽相關的標籤資訊，並支援大量流行的影片格式（例如MKV、AVI、WMV、QuickTime、Real、DivX、XviD）。
 
 Mediainfo用來存取視聽檔案的相關技術元資料（Technical Metadata），並可用以下的指令將技術元資料轉存為國際通用可延伸標記式語言XML。
     
     mediainfo (inputfile) --output=XML --logfile=(outputfile.log)
+
+## Bagit Python
+[Bagit-python](https://github.com/LibraryOfCongress/bagit-python) 是由美國議會圖書館（Library of Congress）所開發開放原始碼的自由軟體 。使用BagIt製作的包裹，包含數位指紋（sha256和sha512）以及製作包裹使用的技術描述<可以被視作為一個數位的作品箱（Digital Crate），它跟實體作品箱的功能相似，用以保護作品不在移動過程中受到損壞，並且提供必要的資訊，讓庫房管理者得以在作品出入庫時檢視並確認作品內容。
+
+製作數位作品箱的執行指令：
+ 
+    bagit.py --process 4 (inputfile)
+
+驗證數位作品箱的執行指令：  
+    
+    bagit.py --validate (outputfile) 
+
 
 ## 相關資源 ##
 - [Archiving and distribution of CD-ROM artworks, a study of the Emulation as a Service (EaaS) tool and other proposals](http://li-ma.nl/site/sites/default/files/201611_DE_Houdbaar_Final_report_CD-ROM_Archiving_DEF.pdf), The Hague, 1 November 2016. <br>
