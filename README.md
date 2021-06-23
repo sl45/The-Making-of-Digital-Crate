@@ -44,7 +44,7 @@ Mediainfo用來存取視聽檔案的相關技術元資料（Technical Metadata�
 
 製作數位作品箱的執行指令：
  
-    bagit.py --process 4 (inputfile)
+    bagit.py --processes 4 (inputfile)
 
 驗證數位作品箱的執行指令：  
     
